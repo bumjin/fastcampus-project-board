@@ -1,6 +1,11 @@
 package com.fastcampus.projectboard.config;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -17,23 +22,6 @@ public class ThymeleafConfig {
         defaultTemplateResolver.setUseDecoupledLogic(thymeleaf3Properties.isDecoupledLogic());
 
         return defaultTemplateResolver;
-    }
-
-
-    @ConfigurationProperties("spring.thymeleaf3")
-    public static class Thymeleaf3Properties {
-        /**
-         * Use Thymeleaf 3 Decoupled Logic
-         */
-        private final boolean decoupledLogic;
-
-        public Thymeleaf3Properties(boolean decoupledLogic) {
-            this.decoupledLogic = decoupledLogic;
-        }
-
-        public boolean isDecoupledLogic() {
-            return this.decoupledLogic;
-        }
     }
 
 }
