@@ -40,8 +40,7 @@ spring:
       detection-strategy: annotated
 
 
-  thymeleaf3:
-    decoupled-logic: true
+  
 
 
 
