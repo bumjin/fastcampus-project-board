@@ -54,7 +54,7 @@ class ArticleCommentServiceTest {
         given(articleCommentRepository.save(any(ArticleComment.class))).willReturn(null);
 
         // When
-        sut.saveArticleComment(ArticleCommentDto.of(LocalDateTime.now(), "Uno", LocalDateTime.now(), "Uno", "comment"));
+        sut.saveArticleComment(ArticleCommentDto.of(LocalDateTime.now(), "bumjin", LocalDateTime.now(), "bumjin", "comment"));
 
         // Then
         then(articleCommentRepository).should().save(any(ArticleComment.class));
